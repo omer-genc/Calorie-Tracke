@@ -71,3 +71,39 @@ ostream& operator << (ostream& os, const Lunch br){
 }
 int Lunch::GetCount(){return Count;}
 int Lunch::GetCalori(){return Calori;}
+
+//Dinner 
+Dinner::Dinner(){
+    Count = 0;
+    Calori = 0;
+}
+
+Dinner::Dinner(int count, int calori){
+    Count = count;
+    Calori = calori;
+}
+
+Dinner::Dinner(const Dinner& other){
+    Count = other.Count;
+    Calori = other.Calori;
+}
+
+Dinner& Dinner::operator= (const Dinner& other){
+    Count = other.Count;
+    Calori = other.Calori;
+    return *this;
+}
+
+Dinner operator+ (Dinner& a, Dinner& b){
+    int count = a.GetCount() + b.GetCount();
+    int calori = a.GetCalori() + b.GetCalori();
+    Dinner x(count,calori);
+    return x;
+}
+
+ostream& operator << (ostream& os, const Dinner br){
+    os<<"Sayaç : "<<br.Count<<endl<<"Kalori: "<<br.Calori<<endl;
+    return os;
+}
+int Dinner::GetCount(){return Count;}
+int Dinner::GetCalori(){return Calori;}

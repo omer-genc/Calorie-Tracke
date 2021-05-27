@@ -26,7 +26,7 @@ class Lunch{
     public:
         Lunch();
         Lunch(int count,int calori);
-        Lunch(const Breakfast&);
+        Lunch(const Lunch&);
         Lunch& operator=(const Lunch&);
         int GetCount();
         int GetCalori();
@@ -40,3 +40,23 @@ class Lunch{
 
 ostream& operator << (ostream&, const Lunch);
 Lunch operator+ (Lunch&,Lunch&);
+
+class Dinner{
+    friend ostream& operator << (ostream&, const Dinner);
+    public:
+        Dinner();
+        Dinner(int count,int calori);
+        Dinner(const Dinner&);
+        Dinner& operator=(const Dinner&);
+        int GetCount();
+        int GetCalori();
+    private:
+        const int Small = 400;
+        const int Medium = 600;
+        const int Large = 800;
+        int Count = 0;
+        int Calori = 0;
+};
+
+ostream& operator << (ostream&, const Dinner);
+Dinner operator+ (Dinner&,Dinner&);
