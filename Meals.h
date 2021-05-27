@@ -10,6 +10,8 @@ class Breakfast{
         Breakfast& operator=(const Breakfast&);
         int GetCount();
         int GetCalori();
+        void SetCount(int);
+        void SetCalori(int);
     private:
         const int Small = 200;
         const int Medium = 400;
@@ -30,6 +32,8 @@ class Lunch{
         Lunch& operator=(const Lunch&);
         int GetCount();
         int GetCalori();
+        void SetCount(int);
+        void SetCalori(int);
     private:
         const int Small = 400;
         const int Medium = 600;
@@ -50,6 +54,8 @@ class Dinner{
         Dinner& operator=(const Dinner&);
         int GetCount();
         int GetCalori();
+        void SetCount(int);
+        void SetCalori(int);
     private:
         const int Small = 400;
         const int Medium = 600;
