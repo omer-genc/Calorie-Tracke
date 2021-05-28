@@ -13,6 +13,8 @@ int main(){
     Breakfast br4(20,20);
     br3 = br4 + br2;
     cout<<br3;
+    br3.Eat();
+    cout<<br3;
     cout<<endl<<endl;
 
     cout<<"Lunch test"<<endl;

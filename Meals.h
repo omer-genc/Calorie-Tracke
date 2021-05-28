@@ -12,6 +12,7 @@ class Breakfast{
         int GetCalori();
         void SetCount(int);
         void SetCalori(int);
+        void Eat();
     private:
         const int Small = 200;
         const int Medium = 400;
@@ -34,6 +35,7 @@ class Lunch{
         int GetCalori();
         void SetCount(int);
         void SetCalori(int);
+        void Eat();
     private:
         const int Small = 400;
         const int Medium = 600;
@@ -56,6 +58,7 @@ class Dinner{
         int GetCalori();
         void SetCount(int);
         void SetCalori(int);
+        void Eat();
     private:
         const int Small = 400;
         const int Medium = 600;

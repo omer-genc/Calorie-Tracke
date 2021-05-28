@@ -36,8 +36,44 @@ ostream& operator << (ostream& os, const Breakfast br){
     os<<"Sayaç : "<<br.Count<<endl<<"Kalori: "<<br.Calori<<endl;
     return os;
 }
+
 int Breakfast::GetCount(){return Count;}
 int Breakfast::GetCalori(){return Calori;}
+
+void Breakfast::Eat(){
+    int x;
+    bool A = true;
+    cout<<"Boy seçiniz:\n"<<"1 Small: 200 kcal"<<
+    endl<<"2 Medium: 400 kcal"<<endl<<"3 Large: 600 kcal"<<
+    endl<<"4 İptal"<<endl;
+    while (A)
+    {
+        cout<<"Seçim:";
+        cin>>x;
+        switch (x){
+            case 1:
+                Calori += Small;
+                Count +=1;
+                A = false;
+                break;
+            case 2:
+                Calori += Medium;
+                Count +=1;
+                A = false;
+            case 3:
+                Calori += Large;
+                Count +=1;
+                A = false;
+            case 4:
+                A = false;
+                break;
+            default:
+                cout<<"Tekrar Seçim Yapınız:";
+                break;
+        }
+    }
+    
+}
 
 //lunch
 Lunch::Lunch(){
@@ -75,8 +111,44 @@ ostream& operator << (ostream& os, const Lunch br){
     os<<"Sayaç : "<<br.Count<<endl<<"Kalori: "<<br.Calori<<endl;
     return os;
 }
+
 int Lunch::GetCount(){return Count;}
 int Lunch::GetCalori(){return Calori;}
+
+void Lunch::Eat(){
+    int x;
+    bool A = true;
+    cout<<"Boy seçiniz:\n"<<"1 Small: 400 kcal"<<
+    endl<<"2 Medium: 600 kcal"<<endl<<"3 Large: 800 kcal"<<
+    endl<<"4 İptal"<<endl;
+    while (A)
+    {
+        cout<<"Seçim:";
+        cin>>x;
+        switch (x){
+            case 1:
+                Calori += Small;
+                Count +=1;
+                A = false;
+                break;
+            case 2:
+                Calori += Medium;
+                Count +=1;
+                A = false;
+            case 3:
+                Calori += Large;
+                Count +=1;
+                A = false;
+            case 4:
+                A = false;
+                break;
+            default:
+                cout<<"Tekrar Seçim Yapınız:";
+                break;
+        }
+    }
+    
+}
 
 //Dinner 
 Dinner::Dinner(){
@@ -114,5 +186,41 @@ ostream& operator << (ostream& os, const Dinner br){
     os<<"Sayaç : "<<br.Count<<endl<<"Kalori: "<<br.Calori<<endl;
     return os;
 }
+
 int Dinner::GetCount(){return Count;}
 int Dinner::GetCalori(){return Calori;}
+
+void Dinner::Eat(){
+    int x;
+    bool A = true;
+    cout<<"Boy seçiniz:\n"<<"1 Small: 400 kcal"<<
+    endl<<"2 Medium: 600 kcal"<<endl<<"3 Large: 800 kcal"<<
+    endl<<"4 İptal"<<endl;
+    while (A)
+    {
+        cout<<"Seçim:";
+        cin>>x;
+        switch (x){
+            case 1:
+                Calori += Small;
+                Count +=1;
+                A = false;
+                break;
+            case 2:
+                Calori += Medium;
+                Count +=1;
+                A = false;
+            case 3:
+                Calori += Large;
+                Count +=1;
+                A = false;
+            case 4:
+                A = false;
+                break;
+            default:
+                cout<<"Tekrar Seçim Yapınız:";
+                break;
+        }
+    }
+    
+}
