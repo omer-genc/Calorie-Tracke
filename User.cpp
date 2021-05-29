@@ -81,6 +81,11 @@ User& User::operator=(const User& user){
     return *this;
 }
 
+User::~User(){
+    delete[]  BasketPtr,FootPtr,TennisPtr,Swimptr,BreakPtr,LunchPtr,DinnerPtr;
+    cout<<endl<<this<<" User Deleted";
+}
+
 string User::GetName(){return Name;}
 string User::GetSurname(){return Surname;}
 int User::GetID(){return ID;}

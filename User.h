@@ -8,6 +8,7 @@ class User{
         User(string name, string surname, int id, int age, int weight, int year);
         User(const User&);
         User& operator=(const User&);
+        ~User();
 
         string GetName();
         string GetSurname();
@@ -45,6 +46,7 @@ class User{
         Breakfast*  BreakPtr;
         Lunch*      LunchPtr;
         Dinner*     DinnerPtr;
+
 
 };
 
