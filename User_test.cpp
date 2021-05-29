@@ -2,7 +2,8 @@
 
 int main(){
     User usr1;
-    cout<<usr1;
+    usr1.StartDay();
+    cout<<endl<<usr1;
 
     return 0;
 }

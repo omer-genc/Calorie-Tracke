@@ -21,10 +21,12 @@ class User{
         void SetAge(int);
         void SetWeight(int);
 
-        int DoSports();
-        int EatMeal();
-
+        void DoSports();
+        void EatMeal();
         void StartDay();
+
+        int CaloriesTaken();
+        int CaloriesBurned();
 
     private:
         string Name;
@@ -33,7 +35,7 @@ class User{
         int Age;
         int Weight;
         int WeekOfYear;
-        string Bilgi;
+        int Day;
 
         Basketball* BasketPtr;
         Football*   FootPtr;
