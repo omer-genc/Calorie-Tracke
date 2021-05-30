@@ -27,6 +27,7 @@ User::User(string name, string surname, int id, int age, int weight, int year){
     Age = age;
     Weight = weight;
     WeekOfYear = year;
+    Day = 0;
 
 
 
@@ -47,6 +48,7 @@ User::User(const User& user){
     Age = user.Age;
     Weight = user.Weight;
     WeekOfYear = user.WeekOfYear;
+    Day = user.Day;
 
 
 
@@ -66,7 +68,8 @@ User& User::operator=(const User& user){
     ID = user.ID;
     Age = user.Age;
     Weight = user.Weight;
-    WeekOfYear = user.WeekOfYear;;
+    WeekOfYear = user.WeekOfYear;
+    Day = user.Day;
 
 
     BasketPtr   = user.BasketPtr;
@@ -91,6 +94,7 @@ int User::GetID(){return ID;}
 int User::GetAge(){return Age;}
 int User::GetWeight(){return Weight;}
 int User::GetWeekOfYear(){return WeekOfYear;}
+int User::GetDay(){return Day;}
 
 void User::SetName(string name){Name = name;}
 void User::SetSurname(string surname){Surname = surname;}
@@ -98,6 +102,7 @@ void User::SetId(int id){ID = id;}
 void User::SetAge(int age){Age = age;}
 void User::SetWeight(int weight){Weight = weight;}
 void User::SetWeekOfYear(int weekofyear){WeekOfYear = weekofyear;}
+void User::SetDay(int day){Day = day;}
 
 void User::DoSports(){
     int secim;
@@ -176,8 +181,14 @@ void User::EatMeal(){
 }
 
 void User::StartDay(){
-    this->DoSports();
-    this->EatMeal();
+    Day+=1;
+    if (Day <= 7)
+    {
+        this->DoSports();
+        this->EatMeal();    
+    }
+    else
+        cout<<endl<<"***** 1 Hafta doldu daha fazla yapamazsın *****"<<endl;    
 }
 
 int User::CaloriesTaken(){
@@ -199,17 +210,17 @@ int User::CaloriesBurned(){
     return kcal;
 }
 
-User* User::Getnext(){return next;}
-void User::Setnext(User& usr){next=&usr;}
+
 
 ostream& operator<<(ostream& os,const User user){
     os<<
-    "İsim: "<<user.Name<<endl<<
-    "Soyisim: "<<user.Surname<<endl<<
+    "Name: "<<user.Name<<endl<<
+    "Surname: "<<user.Surname<<endl<<
     "ID: "<<user.ID<<endl<<
     "Age: "<<user.Age<<endl<<
     "Weight: "<<user.Weight<<endl<<
-    "Week Of Year: "<<user.WeekOfYear<<endl<<endl<<
+    "Week Of Year: "<<user.WeekOfYear<<endl<<
+    "Day"<<user.Day<<endl<<
     "***Meals***"<<endl<<
     *(user.BreakPtr)<<endl<<*(user.LunchPtr)<<endl<<*(user.DinnerPtr)<<endl<<endl<<
     "***Sports***"<<endl<<
@@ -224,6 +235,7 @@ User operator+(User& usr1,User& usr2){
     usr3->Age           = usr1.Age + usr2.Age;
     usr3->Weight        = usr1.Weight + usr2.Weight;
     usr3->WeekOfYear    = usr1.WeekOfYear + usr2.WeekOfYear;
+    usr3->Day           = usr1.Day + usr2.Day;
 
     *(usr3->BasketPtr)  = *(usr1.BasketPtr) + *(usr2.BasketPtr);
     *(usr3->FootPtr)    = *(usr1.FootPtr) + *(usr2.FootPtr);
@@ -257,7 +269,7 @@ User& createUser(){
 
 void User::VeriGir(){
     string name,surname;
-    int id, age, weight, year;
+    int id, age, weight, year,day;
     cout<<"İsim giriniz: ";
     cin>>name;
     cout<<"Soyisim giriniz: ";
@@ -270,15 +282,18 @@ void User::VeriGir(){
     cin>>weight;
     cout<<"Hafta sayısını giriniz: ";
     cin>>year;
+    cout<<"Kaçıncı gün: ";
+    cin>>day;
     BreakPtr->SetCalori(0);
     LunchPtr->SetCalori(0);
     DinnerPtr->SetCalori(0);
-    
+
     Name = name;
     Surname = surname;
     ID = id;
     Age = age;
     Weight = weight;
     WeekOfYear = year;
+    Day = day;
 }
 

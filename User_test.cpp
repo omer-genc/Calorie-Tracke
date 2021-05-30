@@ -10,11 +10,10 @@ int main(){
     while (kapi)
     {
         cout<<"1. Kullanıcı oluştur"<<
-        endl<<"2. Spor bilgisi gir"<<
-        endl<<"3. Öğün bilgisi gir"<<
-        endl<<"4. Kalori verileri"<<
-        endl<<"5. Kullanıcı yazdır"<<
-        endl<<"6. çıkış"<<
+        endl<<"2. Gün kaydı"<<
+        endl<<"3. Kalori verileri"<<
+        endl<<"4. Kullanıcı yazdır"<<
+        endl<<"5. çıkış"<<
         endl<<"Seçim:";
         cin>>secim;
 
@@ -36,34 +35,18 @@ int main(){
             cout<<"1. "<<usr1->GetName()<<" "<<usr1->GetSurname()<<
             endl<<"2. "<<usr2->GetName()<<" "<<usr2->GetSurname()<<
             endl<<"3. "<<usr3->GetName()<<" "<<usr3->GetSurname()<<
-            "Secim: ";
+            endl<<"Secim: ";
             cin>>secim;
             if(secim == 1)
-                usr1->DoSports();
+                usr1->StartDay();
             else if(secim == 2)
-                usr2->DoSports();
+                usr2->StartDay();
             else if(secim == 3)
-                usr3->DoSports();
+                usr3->StartDay();
             else
                 cout<<"Hatalı seçim";
         }
-        else if(secim == 3)
-        {
-            cout<<"1. "<<usr1->GetName()<<" "<<usr1->GetSurname()<<
-            endl<<"2. "<<usr2->GetName()<<" "<<usr2->GetSurname()<<
-            endl<<"3. "<<usr3->GetName()<<" "<<usr3->GetSurname()<<
-            "Secim: ";
-            cin>>secim;
-            if(secim == 1)
-                usr1->EatMeal();
-            else if(secim == 2)
-                usr2->EatMeal();
-            else if(secim == 3)
-                usr3->EatMeal();
-            else
-                cout<<"Hatalı seçim";
-        }
-        else if (secim == 4)
+        else if (secim == 3)
         {
             cout<<"1. "<<usr1->GetName()<<" "<<usr1->GetSurname()<<
             endl<<"2. "<<usr2->GetName()<<" "<<usr2->GetSurname()<<
@@ -91,7 +74,7 @@ int main(){
             else
                 cout<<"Hatalı seçim";
         }
-        else if(secim == 5)
+        else if(secim == 4)
         {
             cout<<"1. "<<usr1->GetName()<<" "<<usr1->GetSurname()<<
             endl<<"2. "<<usr2->GetName()<<" "<<usr2->GetSurname()<<
@@ -108,7 +91,7 @@ int main(){
             else
                 cout<<"Hatalı seçim."<<endl;
         }
-        else if(secim == 6)
+        else if(secim == 5)
             kapi = false;
         else 
             cout<<"Hatalı seçim tekrar deneyiniz"<<endl;

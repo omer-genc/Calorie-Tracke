@@ -19,6 +19,7 @@ class User{
         int GetAge();
         int GetWeight();
         int GetWeekOfYear();
+        int GetDay();
 
         void SetName(string);
         void SetSurname(string);
@@ -26,6 +27,7 @@ class User{
         void SetAge(int);
         void SetWeight(int);
         void SetWeekOfYear(int);
+        void SetDay(int);
 
         void DoSports();
         void EatMeal();
@@ -34,8 +36,6 @@ class User{
         int CaloriesTaken();
         int CaloriesBurned();
 
-        User* Getnext();
-        void Setnext(User&);
 
     private:
         string Name;
@@ -44,6 +44,7 @@ class User{
         int Age;
         int Weight;
         int WeekOfYear;
+        int Day;
 
         Basketball* BasketPtr;
         Football*   FootPtr;
@@ -53,7 +54,7 @@ class User{
         Breakfast*  BreakPtr;
         Lunch*      LunchPtr;
         Dinner*     DinnerPtr;
-        User*       next;
+  
 
 };
 
