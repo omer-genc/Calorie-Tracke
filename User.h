@@ -3,24 +3,29 @@
 
 class User{
     friend ostream& operator<<(ostream& os,const User);
+    friend User operator+(User&,User&);
     public:
         User();
         User(string name, string surname, int id, int age, int weight, int year);
-        User(const User&);
+        User(const User& user);
         User& operator=(const User&);
+        void VeriGir();
         ~User();
+        
 
         string GetName();
         string GetSurname();
         int GetID();
         int GetAge();
         int GetWeight();
+        int GetWeekOfYear();
 
         void SetName(string);
         void SetSurname(string);
         void SetId(int);
         void SetAge(int);
         void SetWeight(int);
+        void SetWeekOfYear(int);
 
         void DoSports();
         void EatMeal();
@@ -29,6 +34,9 @@ class User{
         int CaloriesTaken();
         int CaloriesBurned();
 
+        User* Getnext();
+        void Setnext(User&);
+
     private:
         string Name;
         string Surname;
@@ -36,7 +44,6 @@ class User{
         int Age;
         int Weight;
         int WeekOfYear;
-        int Day;
 
         Basketball* BasketPtr;
         Football*   FootPtr;
@@ -46,8 +53,12 @@ class User{
         Breakfast*  BreakPtr;
         Lunch*      LunchPtr;
         Dinner*     DinnerPtr;
-
+        User*       next;
 
 };
 
 ostream& operator<<(ostream& os,const User);
+User operator+(User&,User&);
+
+
+

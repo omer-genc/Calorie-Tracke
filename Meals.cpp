@@ -33,7 +33,7 @@ void Breakfast::SetCount(int count){Count = count;}
 void Breakfast::SetCalori(int calori){Calori = calori;}
 
 ostream& operator << (ostream& os, const Breakfast br){
-    os<<"Sayaç : "<<br.Count<<endl<<"Kalori: "<<br.Calori<<endl;
+    os<<"Breakfast"<<endl<<"Sayaç : "<<br.Count<<endl<<"Kalori: "<<br.Calori<<endl;
     return os;
 }
 
@@ -108,7 +108,7 @@ void Lunch::SetCount(int count){Count = count;}
 void Lunch::SetCalori(int calori){Calori = calori;}
 
 ostream& operator << (ostream& os, const Lunch br){
-    os<<"Sayaç : "<<br.Count<<endl<<"Kalori: "<<br.Calori<<endl;
+    os<<"Lunch"<<endl<<"Sayaç : "<<br.Count<<endl<<"Kalori: "<<br.Calori<<endl;
     return os;
 }
 
@@ -183,7 +183,7 @@ void Dinner::SetCount(int count){Count = count;}
 void Dinner::SetCalori(int calori){Calori = calori;}
 
 ostream& operator << (ostream& os, const Dinner br){
-    os<<"Sayaç : "<<br.Count<<endl<<"Kalori: "<<br.Calori<<endl;
+    os<<"Lunch"<<endl<<"Sayaç : "<<br.Count<<endl<<"Kalori: "<<br.Calori<<endl;
     return os;
 }
 
