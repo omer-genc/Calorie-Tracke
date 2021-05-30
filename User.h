@@ -61,5 +61,7 @@ class User{
 ostream& operator<<(ostream& os,const User);
 User operator+(User&,User&);
 
+void UserMode(User* usr1,User* usr2,User* usr3);
+
 
 

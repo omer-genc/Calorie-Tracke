@@ -28,6 +28,10 @@
 #include "User.h"
 
 int main(){
-    
+    User *usr1 = new User;
+    User *usr2 = new User;
+    User *usr3 = new User;
+
+    UserMode(usr1,usr2,usr3);
     return 0;
 }

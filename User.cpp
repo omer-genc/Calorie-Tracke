@@ -122,60 +122,70 @@ void User::DoSports(){
         {
             case 1:
                 BasketPtr->SetMinute(minute);
-                dongu = false;
                 break;
             case 2:
                 FootPtr->SetMinute(minute);
-                dongu = false;
                 break;
             case 3:
                 TennisPtr->SetMinute(minute);
-                dongu = false;
                 break;
             case 4:
                 Swimptr->SetMinute(minute);
-                dongu = false;
                 break;
             default:
                 cout<<"Geçerli seçim yapınız"<<endl;
                 break;
-        }//end switc case  
+        }//end switc case
+        cout<<"1. Yeni kayıt"<<endl<<"2. Çıkış"<<endl<<"Seçim: ";
+        cin>>secim;
+        if(secim == 1)
+        {
+            cout<<"Spor süresi (dk): ";
+            cin>>minute;
+            cout<<"Sporlar:"<<endl<<
+            "1 Basketbol"<<endl<<"2 Futbol"<<endl<<
+            "3 Tenis"<<endl<<"4 Yüzme"<<endl;
+        }
+        else
+            dongu = false;
+        
     }//end while
     
 }//end do sport function
 
 void User::EatMeal(){
-    int meal;
-    bool sizeBool = true;
+    int secim;
     bool mealBool = true;
 
-    cout<<endl<<"Öğünler"<<endl<< "1 Breakfast"<<endl
-    <<"2 Lunch"<<endl<<"3 Dinner"<<endl;
     while (mealBool)
     {
+        cout<<endl<<"Öğünler"<<endl<< "1 Breakfast"<<endl
+        <<"2 Lunch"<<endl<<"3 Dinner"<<endl;
         cout<<"Seçim: ";
-        cin>>meal;
-        if(meal == 1 || meal == 2 || meal ==3)
+        cin>>secim;
+        switch (secim)
+        {
+            case 1:
+                BreakPtr->Eat();
+                break;
+            case 2:
+                LunchPtr->Eat();
+                break;
+            case 3:
+                DinnerPtr->Eat();
+                break;
+            default:
+                cout<<"Hatalı seçim";
+                break;
+        }
+        cout<<"1. Yeni kayıt"<<endl<<"2. çıkış"<<endl<<"seçim: ";
+        cin>>secim;
+        if(secim != 1)
             mealBool = false;
-        else
-            cout<<"Tekrar deneyiniz."<<endl;
+
     }
 
-    switch (meal)
-    {
-        case 1:
-            BreakPtr->Eat();
-            break;
-        case 2:
-            LunchPtr->Eat();
-            break;
-        case 3:
-            DinnerPtr->Eat();
-            break;
-        default:
-            cout<<"Bi sorun var";
-            break;
-    }
+    
     
 
 }
@@ -248,25 +258,6 @@ User operator+(User& usr1,User& usr2){
     return *usr3;
 }
 
-User& createUser(){
-    string name,surname;
-    int id, age, weight, year;
-    cout<<"İsim giriniz: ";
-    cin>>name;
-    cout<<"Soyisim giriniz: ";
-    cin>>surname;
-    cout<<"ID giriniz: ";
-    cin>>id;
-    cout<<"Yaş giriniz: ";
-    cin>>age;
-    cout<<"Kilonuzu giriniz: ";
-    cin>>weight;
-    cout<<"Hafta sayısını giriniz: ";
-    cin>>year;
-    User* tmp = new User(name,surname,id,age,weight,year);
-    return *tmp;
-}
-
 void User::VeriGir(){
     string name,surname;
     int id, age, weight, year,day;
@@ -297,3 +288,100 @@ void User::VeriGir(){
     Day = day;
 }
 
+void UserMode(User* usr1,User* usr2,User* usr3)
+{
+    bool kapi = true;
+    int secim;
+    
+    while (kapi)
+    {
+        cout<<"1. Kullanıcı oluştur"<<
+        endl<<"2. Gün kaydı"<<
+        endl<<"3. Kalori verileri"<<
+        endl<<"4. Kullanıcı yazdır"<<
+        endl<<"5. çıkış"<<
+        endl<<"Seçim:";
+        cin>>secim;
+
+        if (secim == 1)
+        {
+            cout<<"1. slot"<<endl<<"2. slot"<<endl<<"3. slot"<<endl<<"Seçim: ";
+            cin>>secim;
+            if(secim == 1)
+                usr1->VeriGir();
+            else if(secim == 2)
+                usr2->VeriGir();
+            else if(secim == 3)
+                usr3->VeriGir();
+            else
+                cout<<"Hatalı seçim";
+        }
+        else if(secim == 2)
+        {
+            cout<<"1. "<<usr1->GetName()<<" "<<usr1->GetSurname()<<
+            endl<<"2. "<<usr2->GetName()<<" "<<usr2->GetSurname()<<
+            endl<<"3. "<<usr3->GetName()<<" "<<usr3->GetSurname()<<
+            endl<<"Secim: ";
+            cin>>secim;
+            if(secim == 1)
+                usr1->StartDay();
+            else if(secim == 2)
+                usr2->StartDay();
+            else if(secim == 3)
+                usr3->StartDay();
+            else
+                cout<<"Hatalı seçim";
+        }
+        else if (secim == 3)
+        {
+            cout<<"1. "<<usr1->GetName()<<" "<<usr1->GetSurname()<<
+            endl<<"2. "<<usr2->GetName()<<" "<<usr2->GetSurname()<<
+            endl<<"3. "<<usr3->GetName()<<" "<<usr3->GetSurname()<<
+            "Secim: ";
+            cin>>secim;
+            if(secim == 1)
+            {
+                cout<<"Alınan kalori: "<<usr1->CaloriesTaken()<<
+                endl<<"Yakılan kalori: "<<usr1->CaloriesBurned()<<
+                endl<<"Net"<<usr1->CaloriesTaken()-usr1->CaloriesBurned()<<endl;
+            }
+            else if(secim == 2)
+            {
+                cout<<"Alınan kalori: "<<usr2->CaloriesTaken()<<
+                endl<<"Yakılan kalori: "<<usr2->CaloriesBurned()<<
+                endl<<"Net"<<usr2->CaloriesTaken()-usr2->CaloriesBurned()<<endl;
+            }
+            else if(secim == 3)
+            {
+                cout<<"Alınan kalori: "<<usr3->CaloriesTaken()<<
+                endl<<"Yakılan kalori: "<<usr3->CaloriesBurned()<<
+                endl<<"Net"<<usr3->CaloriesTaken()-usr3->CaloriesBurned()<<endl;
+            }
+            else
+                cout<<"Hatalı seçim";
+        }
+        else if(secim == 4)
+        {
+            cout<<"1. "<<usr1->GetName()<<" "<<usr1->GetSurname()<<
+            endl<<"2. "<<usr2->GetName()<<" "<<usr2->GetSurname()<<
+            endl<<"3. "<<usr3->GetName()<<" "<<usr3->GetSurname()<<
+            endl<<"Secim: ";
+            cin>>secim;
+
+            if(secim == 1)
+                cout<<endl<<*usr1<<endl;
+            else if(secim == 2)
+                cout<<endl<<*usr1<<endl;
+            else if(secim == 3)
+                cout<<endl<<*usr1<<endl;
+            else
+                cout<<"Hatalı seçim."<<endl;
+        }
+        else if(secim == 5)
+            kapi = false;
+        else 
+            cout<<"Hatalı seçim tekrar deneyiniz"<<endl;
+        
+    }
+    
+}
