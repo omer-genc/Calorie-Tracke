@@ -63,5 +63,6 @@ User operator+(User&,User&);
 
 void UserMode(User* usr1,User* usr2,User* usr3);
 void DevMode();
+void userTest();
 
 

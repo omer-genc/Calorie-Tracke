@@ -227,7 +227,7 @@ ostream& operator<<(ostream& os,const User user){
     "Age: "<<user.Age<<endl<<
     "Weight: "<<user.Weight<<endl<<
     "Week Of Year: "<<user.WeekOfYear<<endl<<
-    "Day"<<user.Day<<endl<<
+    "Day: "<<user.Day<<endl<<
     "***Meals***"<<endl<<
     (user.BreakPtr)<<endl<<(user.LunchPtr)<<endl<<(user.DinnerPtr)<<endl<<endl<<
     "***Sports***"<<endl<<
@@ -394,6 +394,7 @@ void DevMode(){
         endl<<"5. Football class test"<<
         endl<<"6. Tennis class test"<<
         endl<<"7. Swimming class test"<<
+        endl<<"8. User class test"<<
         endl<<"Seçim: ";
         cin>>secim;
 
@@ -419,6 +420,8 @@ void DevMode(){
             break;
         case 7:
             swimmingTest();
+        case 8:
+            userTest();
             break;
         
         default:
@@ -427,4 +430,39 @@ void DevMode(){
         }
     }
     
+}
+
+void userTest(){
+    User *usr1 = new User();
+    User *usr2 = new User("ömer","genç",1,23,74,10);
+    
+    string setmethod = "SetName(nazlı);\nSetSurname(genç);\nSetId(1);\nSetAge(1);\nSetWeight(1);\nSetWeekOfYear(1);\nSetDay(1);";
+    string getmethod = "GetName();\nGetSurname();\nGetID();\nGetAge();\nGetWeight();\nGetWeekOfYear();\nGetDay();";
+    cout<<"usr1 default constructor ile oluşturuldu"<<
+    endl<<"usr1 yazdırılıyor..."<<endl;
+    cout<<*usr1<<
+    endl<<"usr2 constructor ile oluşturuldu.... User usr2(ömer,genç,1,23,74,10)"<<
+    endl<<"usr2 yazdırılıyor..."<<endl<<*usr2<<endl<<"Usr2 için StartDay() metodu çalıştırılıyor (dosport ve eat meal bunun içerisinde)"<<endl;
+    usr2->StartDay();
+    User *usr3 = new User(*usr2);
+    cout<<"usr3 copy constructor ile oluşturuldu... User usr3(usr2)"<<
+    endl<<"usr3 yazdırılıyor..."<<endl<<*usr3<<endl;
+    cout<<"asigmant operator test ediliyor... usr1 = usr3"<<endl;
+    *usr1=*usr3;
+    cout<<"usr1 yazdırılıyor...."<<endl<<*usr1<<
+    endl<<"set metotları usr1 için uygulanıyor..."<<
+    endl<<setmethod<<endl;
+    usr1->SetName("nazlı");
+    usr1->SetSurname("genç");
+    usr1->SetId(1);
+    usr1->SetAge(1);
+    usr1->SetWeight(1);
+    usr1->SetWeekOfYear(1);
+    usr1->SetDay(1);
+    cout<<"usr1 için get mehodtları test ediliyor.."<<endl<<getmethod<<
+    endl<<usr1->GetName()<<endl<<usr1->GetSurname()<<
+    endl<<usr1->GetID()<<endl<<usr1->GetAge()<<
+    endl<<usr1->GetWeight()<<endl<<usr1->GetWeekOfYear()<<
+    endl<<usr1->GetDay()<<endl;
+    delete usr1,usr2,usr3;
 }
