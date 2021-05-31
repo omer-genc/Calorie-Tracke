@@ -10,14 +10,14 @@ User::User(){
 
 
 
-    BasketPtr   = new Basketball();
-    FootPtr     = new Football();
-    TennisPtr   = new Tennis();
-    Swimptr     = new Swimming();
+    BasketPtr   =  Basketball();
+    FootPtr     =  Football();
+    TennisPtr   =  Tennis();
+    Swimptr     =  Swimming();
 
-    BreakPtr    = new Breakfast();
-    LunchPtr    = new Lunch();
-    DinnerPtr   = new Dinner();
+    BreakPtr    =  Breakfast();
+    LunchPtr    =  Lunch();
+    DinnerPtr   =  Dinner();
 }
 
 User::User(string name, string surname, int id, int age, int weight, int year){
@@ -31,14 +31,14 @@ User::User(string name, string surname, int id, int age, int weight, int year){
 
 
 
-    BasketPtr   = new Basketball();
-    FootPtr     = new Football();
-    TennisPtr   = new Tennis();
-    Swimptr     = new Swimming();
+    BasketPtr   =  Basketball();
+    FootPtr     =  Football();
+    TennisPtr   =  Tennis();
+    Swimptr     =  Swimming();
 
-    BreakPtr    = new Breakfast();
-    LunchPtr    = new Lunch();
-    DinnerPtr   = new Dinner();
+    BreakPtr    =  Breakfast();
+    LunchPtr    =  Lunch();
+    DinnerPtr   =  Dinner();
 }
 
 User::User(const User& user){
@@ -84,7 +84,6 @@ User& User::operator=(const User& user){
 }
 
 User::~User(){
-    delete[]  BasketPtr,FootPtr,TennisPtr,Swimptr,BreakPtr,LunchPtr,DinnerPtr;
     cout<<endl<<this<<" User Deleted"<<endl;
 }
 
@@ -121,16 +120,16 @@ void User::DoSports(){
         switch (secim)
         {
             case 1:
-                BasketPtr->SetMinute(minute);
+                BasketPtr.SetMinute(minute);
                 break;
             case 2:
-                FootPtr->SetMinute(minute);
+                FootPtr.SetMinute(minute);
                 break;
             case 3:
-                TennisPtr->SetMinute(minute);
+                TennisPtr.SetMinute(minute);
                 break;
             case 4:
-                Swimptr->SetMinute(minute);
+                Swimptr.SetMinute(minute);
                 break;
             default:
                 cout<<"Geçerli seçim yapınız"<<endl;
@@ -166,13 +165,13 @@ void User::EatMeal(){
         switch (secim)
         {
             case 1:
-                BreakPtr->Eat();
+                BreakPtr.Eat();
                 break;
             case 2:
-                LunchPtr->Eat();
+                LunchPtr.Eat();
                 break;
             case 3:
-                DinnerPtr->Eat();
+                DinnerPtr.Eat();
                 break;
             default:
                 cout<<"Hatalı seçim";
@@ -203,19 +202,19 @@ void User::StartDay(){
 
 int User::CaloriesTaken(){
     int kcal = 0;
-    kcal += this->BreakPtr->GetCalori();
-    kcal += this->LunchPtr->GetCalori();
-    kcal += this->DinnerPtr->GetCalori();
+    kcal += this->BreakPtr.GetCalori();
+    kcal += this->LunchPtr.GetCalori();
+    kcal += this->DinnerPtr.GetCalori();
 
     return kcal;
 }
 
 int User::CaloriesBurned(){
     int kcal = 0;
-    kcal += this->BasketPtr->GetBurn();
-    kcal += this->FootPtr->GetBurn();
-    kcal += this->TennisPtr->GetBurn();
-    kcal += this->Swimptr->GetBurn();
+    kcal += this->BasketPtr.GetBurn();
+    kcal += this->FootPtr.GetBurn();
+    kcal += this->TennisPtr.GetBurn();
+    kcal += this->Swimptr.GetBurn();
 
     return kcal;
 }
@@ -228,11 +227,11 @@ ostream& operator<<(ostream& os,const User user){
     "Age: "<<user.Age<<endl<<
     "Weight: "<<user.Weight<<endl<<
     "Week Of Year: "<<user.WeekOfYear<<endl<<
-    "Day"<<user.Day<<endl<<
+    "Day: "<<user.Day<<endl<<
     "***Meals***"<<endl<<
-    *(user.BreakPtr)<<endl<<*(user.LunchPtr)<<endl<<*(user.DinnerPtr)<<endl<<endl<<
+    (user.BreakPtr)<<endl<<(user.LunchPtr)<<endl<<(user.DinnerPtr)<<endl<<endl<<
     "***Sports***"<<endl<<
-    *(user.BasketPtr)<<endl<<*(user.FootPtr)<<endl<<*(user.TennisPtr)<<endl<<*(user.Swimptr);
+    (user.BasketPtr)<<endl<<(user.FootPtr)<<endl<<(user.TennisPtr)<<endl<<(user.Swimptr);
     return os;
 }
 
@@ -245,14 +244,14 @@ User operator+(User& usr1,User& usr2){
     usr3->WeekOfYear    = usr1.WeekOfYear + usr2.WeekOfYear;
     usr3->Day           = usr1.Day + usr2.Day;
 
-    *(usr3->BasketPtr)  = *(usr1.BasketPtr) + *(usr2.BasketPtr);
-    *(usr3->FootPtr)    = *(usr1.FootPtr) + *(usr2.FootPtr);
-    *(usr3->TennisPtr)  = *(usr1.TennisPtr) + *(usr2.TennisPtr);
-    *(usr3->Swimptr)    = *(usr1.Swimptr) + *(usr2.Swimptr);
+    (usr3->BasketPtr)  = (usr1.BasketPtr) + (usr2.BasketPtr);
+    (usr3->FootPtr)    = (usr1.FootPtr) + (usr2.FootPtr);
+    (usr3->TennisPtr)  = (usr1.TennisPtr) + (usr2.TennisPtr);
+    (usr3->Swimptr)    = (usr1.Swimptr) + (usr2.Swimptr);
 
-    *(usr3->BreakPtr)   = *(usr1.BreakPtr) + *(usr2.BreakPtr);
-    *(usr3->LunchPtr)   = *(usr1.LunchPtr) + *(usr2.LunchPtr);
-    *(usr3->DinnerPtr)  = *(usr1.DinnerPtr) + *(usr2.DinnerPtr);
+    (usr3->BreakPtr)   = (usr1.BreakPtr) + (usr2.BreakPtr);
+    (usr3->LunchPtr)   = (usr1.LunchPtr) + (usr2.LunchPtr);
+    (usr3->DinnerPtr)  = (usr1.DinnerPtr) + (usr2.DinnerPtr);
     return *usr3;
 }
 
@@ -273,9 +272,9 @@ void User::VeriGir(){
     cin>>year;
     cout<<"Kaçıncı gün: ";
     cin>>day;
-    BreakPtr->SetCalori(0);
-    LunchPtr->SetCalori(0);
-    DinnerPtr->SetCalori(0);
+    BreakPtr.SetCalori(0);
+    LunchPtr.SetCalori(0);
+    DinnerPtr.SetCalori(0);
 
     Name = name;
     Surname = surname;
@@ -395,6 +394,7 @@ void DevMode(){
         endl<<"5. Football class test"<<
         endl<<"6. Tennis class test"<<
         endl<<"7. Swimming class test"<<
+        endl<<"8. User class test"<<
         endl<<"Seçim: ";
         cin>>secim;
 
@@ -420,6 +420,8 @@ void DevMode(){
             break;
         case 7:
             swimmingTest();
+        case 8:
+            userTest();
             break;
         
         default:
@@ -428,4 +430,39 @@ void DevMode(){
         }
     }
     
+}
+
+void userTest(){
+    User *usr1 = new User();
+    User *usr2 = new User("ömer","genç",1,23,74,10);
+    
+    string setmethod = "SetName(nazlı);\nSetSurname(genç);\nSetId(1);\nSetAge(1);\nSetWeight(1);\nSetWeekOfYear(1);\nSetDay(1);";
+    string getmethod = "GetName();\nGetSurname();\nGetID();\nGetAge();\nGetWeight();\nGetWeekOfYear();\nGetDay();";
+    cout<<"usr1 default constructor ile oluşturuldu"<<
+    endl<<"usr1 yazdırılıyor..."<<endl;
+    cout<<*usr1<<
+    endl<<"usr2 constructor ile oluşturuldu.... User usr2(ömer,genç,1,23,74,10)"<<
+    endl<<"usr2 yazdırılıyor..."<<endl<<*usr2<<endl<<"Usr2 için StartDay() metodu çalıştırılıyor (dosport ve eat meal bunun içerisinde)"<<endl;
+    usr2->StartDay();
+    User *usr3 = new User(*usr2);
+    cout<<"usr3 copy constructor ile oluşturuldu... User usr3(usr2)"<<
+    endl<<"usr3 yazdırılıyor..."<<endl<<*usr3<<endl;
+    cout<<"asigmant operator test ediliyor... usr1 = usr3"<<endl;
+    *usr1=*usr3;
+    cout<<"usr1 yazdırılıyor...."<<endl<<*usr1<<
+    endl<<"set metotları usr1 için uygulanıyor..."<<
+    endl<<setmethod<<endl;
+    usr1->SetName("nazlı");
+    usr1->SetSurname("genç");
+    usr1->SetId(1);
+    usr1->SetAge(1);
+    usr1->SetWeight(1);
+    usr1->SetWeekOfYear(1);
+    usr1->SetDay(1);
+    cout<<"usr1 için get mehodtları test ediliyor.."<<endl<<getmethod<<
+    endl<<usr1->GetName()<<endl<<usr1->GetSurname()<<
+    endl<<usr1->GetID()<<endl<<usr1->GetAge()<<
+    endl<<usr1->GetWeight()<<endl<<usr1->GetWeekOfYear()<<
+    endl<<usr1->GetDay()<<endl;
+    delete usr1,usr2,usr3;
 }
