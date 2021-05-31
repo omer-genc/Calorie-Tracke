@@ -10,9 +10,12 @@ class Basketball{
         Basketball& operator=(const Basketball&);
         int GetBurn();
         int GetMinute();
+        int GetCount();
+        void SetCount(int);
         void SetMinute(int);
         
     private:
+        int count = 0;
         int Minute = 0;
         const int Kcal = 6;
 };
@@ -29,9 +32,12 @@ class Football{
         Football& operator=(const Football&);
         int GetBurn();
         int GetMinute();
+        int GetCount();
+        void SetCount(int);
         void SetMinute(int);
         
     private:
+        int count = 0;
         int Minute = 0;
         const int Kcal = 5;
 };
@@ -48,9 +54,12 @@ class Tennis{
         Tennis& operator=(const Tennis&);
         int GetBurn();
         int GetMinute();
+        int GetCount();
+        void SetCount(int);
         void SetMinute(int);
         
     private:
+        int count = 0;
         int Minute = 0;
         const int Kcal = 5;
 };
@@ -67,9 +76,12 @@ class Swimming{
         Swimming& operator=(const Swimming&);
         int GetBurn();
         int GetMinute();
+        int GetCount();
+        void SetCount(int);
         void SetMinute(int);
         
     private:
+        int count = 0;
         int Minute = 0;
         const int Kcal = 7;
 };
