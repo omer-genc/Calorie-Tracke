@@ -5,10 +5,11 @@ Basketball::Basketball(){Minute = 0;}
 
 Basketball::Basketball(int minute){Minute = minute;}
 
-Basketball::Basketball(const Basketball& other){Minute = other.Minute;}
+Basketball::Basketball(const Basketball& other){Minute = other.Minute; count = other.count;}
 
 Basketball& Basketball::operator=(const Basketball& other){
     Minute = other.Minute;
+    count = other.count;
     return *this;
 }
 
@@ -16,17 +17,23 @@ int Basketball::GetBurn(){return Kcal*Minute;}
 
 int Basketball::GetMinute(){return Minute;}
 
+int Basketball::GetCount(){return count;}
+
+void Basketball::SetCount(int a){count = a;}
+
 void Basketball::SetMinute(int minute){Minute = minute;}
 
 ostream& operator<<(ostream& os, const Basketball bs){
     os<<"Basketball\n"<<"Minute: "<<bs.Minute
-    <<endl<<"Calori: "<<bs.Minute*bs.Kcal<<endl;
+    <<endl<<"kalori: "<<bs.Minute*bs.Kcal<<endl
+    <<"Sayaç: "<<bs.count<<endl;
     return os;
 }
 
 Basketball operator+(Basketball& a,Basketball& b){
     int x = a.GetMinute() + b.GetMinute();
     Basketball y(x);
+    y.SetCount(a.GetCount() + b.GetCount());
     return y;
 }
 
@@ -35,10 +42,11 @@ Football::Football(){Minute = 0;}
 
 Football::Football(int minute){Minute = minute;}
 
-Football::Football(const Football& other){Minute = other.Minute;}
+Football::Football(const Football& other){Minute = other.Minute; count = other.count;}
 
 Football& Football::operator=(const Football& other){
     Minute = other.Minute;
+    count = other.count;
     return *this;
 }
 
@@ -46,17 +54,23 @@ int Football::GetBurn(){return Kcal*Minute;}
 
 int Football::GetMinute(){return Minute;}
 
+int Football::GetCount(){return count;}
+
+void Football::SetCount(int a){count = a;}
+
 void Football::SetMinute(int minute){Minute = minute;}
 
 ostream& operator<<(ostream& os, const Football bs){
     os<<"Football\n"<<"Minute: "<<bs.Minute
-    <<endl<<"Calori: "<<bs.Minute*bs.Kcal<<endl;
+    <<endl<<"Calori: "<<bs.Minute*bs.Kcal<<endl
+    <<"Sayaç: "<<bs.count<<endl;
     return os;
 }
 
 Football operator+(Football& a,Football& b){
     int x = a.GetMinute() + b.GetMinute();
     Football y(x);
+    y.SetCount(a.GetCount() + b.GetCount());
     return y;
 }
 
@@ -65,10 +79,11 @@ Tennis::Tennis(){Minute = 0;}
 
 Tennis::Tennis(int minute){Minute = minute;}
 
-Tennis::Tennis(const Tennis& other){Minute = other.Minute;}
+Tennis::Tennis(const Tennis& other){Minute = other.Minute; count = other.count;}
 
 Tennis& Tennis::operator=(const Tennis& other){
     Minute = other.Minute;
+    count = other.count;
     return *this;
 }
 
@@ -76,17 +91,23 @@ int Tennis::GetBurn(){return Kcal*Minute;}
 
 int Tennis::GetMinute(){return Minute;}
 
+int Tennis::GetCount(){return count;}
+
+void Tennis::SetCount(int a){count = a;}
+
 void Tennis::SetMinute(int minute){Minute = minute;}
 
 ostream& operator<<(ostream& os, const Tennis bs){
     os<<"Tennis\n"<<"Minute: "<<bs.Minute
-    <<endl<<"Calori: "<<bs.Minute*bs.Kcal<<endl;
+    <<endl<<"Calori: "<<bs.Minute*bs.Kcal<<endl
+    <<"Sayaç: "<<bs.count<<endl;
     return os;
 }
 
 Tennis operator+(Tennis& a,Tennis& b){
     int x = a.GetMinute() + b.GetMinute();
     Tennis y(x);
+    y.SetCount(a.GetCount() + b.GetCount());
     return y;
 }
 
@@ -95,10 +116,11 @@ Swimming::Swimming(){Minute = 0;}
 
 Swimming::Swimming(int minute){Minute = minute;}
 
-Swimming::Swimming(const Swimming& other){Minute = other.Minute;}
+Swimming::Swimming(const Swimming& other){Minute = other.Minute; count = other.count;}
 
 Swimming& Swimming::operator=(const Swimming& other){
     Minute = other.Minute;
+    count = other.count;
     return *this;
 }
 
@@ -106,17 +128,23 @@ int Swimming::GetBurn(){return Kcal*Minute;}
 
 int Swimming::GetMinute(){return Minute;}
 
+int Swimming::GetCount(){return count;}
+
+void Swimming::SetCount(int a){count = a;}
+
 void Swimming::SetMinute(int minute){Minute = minute;}
 
 ostream& operator<<(ostream& os, const Swimming bs){
     os<<"Swimming\n"<<"Minute: "<<bs.Minute
-    <<endl<<"Calori: "<<bs.Minute*bs.Kcal<<endl;
+    <<endl<<"Calori: "<<bs.Minute*bs.Kcal<<endl
+    <<"Sayaç: "<<bs.count<<endl;
     return os;
 }
 
 Swimming operator+(Swimming& a,Swimming& b){
     int x = a.GetMinute() + b.GetMinute();
     Swimming y(x);
+    y.SetCount(a.GetCount() + b.GetCount());
     return y;
 }
 
@@ -146,10 +174,13 @@ void basketballTest(){
     bs4 = bs2 + bs3;
     cout<<bs4;
     bs4.SetMinute(50);
+    bs4.SetCount(5);
     cout<<"set get metotları test ediliyor"<<
     endl<<"bs4.setMinute(50): "<<
     endl<<"bs4.GetMinute(): "<<bs4.GetMinute()<<
     endl<<"bs4.GetBurn(): "<<bs4.GetBurn()<<
+    endl<<"bs4.SetCount(5)"<<
+    endl<<"bs4.GetCount(): "<<bs4.GetCount()<<
     endl<<endl<<endl;
 }
 void footballTest(){
@@ -176,11 +207,14 @@ void footballTest(){
     endl<<"fb4 yazdırılıyor..."<<endl;
     fb4 = fb2 + fb3;
     cout<<fb4;
+    fb4.SetCount(5);
     fb4.SetMinute(50);
     cout<<"set get metotları test ediliyor"<<
     endl<<"fb4.setMinute(50): "<<
     endl<<"fb4.GetMinute(): "<<fb4.GetMinute()<<
     endl<<"fb4.GetBurn(): "<<fb4.GetBurn()<<
+    endl<<"fb4.SetCount(5)"<<
+    endl<<"fb4.GetCount(): "<<fb4.GetCount()<<
     endl<<endl<<endl;
 }
 void tennisTest(){
@@ -208,10 +242,13 @@ void tennisTest(){
     tn4 = tn2 + tn3;
     cout<<tn4;
     tn4.SetMinute(50);
+    tn4.SetCount(5);
     cout<<"set get metotları test ediliyor"<<
     endl<<"tn4.setMinute(50): "<<
     endl<<"tn4.GetMinute(): "<<tn4.GetMinute()<<
     endl<<"tn4.GetBurn(): "<<tn4.GetBurn()<<
+    endl<<"tn4.SetCount(5)"<<
+    endl<<"tn4.GetCount(): "<<tn4.GetCount()<<
     endl<<endl<<endl;
 }
 void swimmingTest(){
@@ -238,10 +275,13 @@ void swimmingTest(){
     endl<<"sw4 yazdırılıyor..."<<endl;
     sw4 = sw2 + sw3;
     cout<<sw4;
+    sw4.SetCount(5);
     sw4.SetMinute(50);
     cout<<"set get metotları test ediliyor"<<
     endl<<"sw4.setMinute(50): "<<
     endl<<"sw4.GetMinute(): "<<sw4.GetMinute()<<
     endl<<"sw4.GetBurn(): "<<sw4.GetBurn()<<
+    endl<<"sw4.SetCount(5)"<<
+    endl<<"sw4.GetCount(): "<<sw4.GetCount()<<
     endl<<endl<<endl;
 }

@@ -121,15 +121,19 @@ void User::DoSports(){
         {
             case 1:
                 BasketPtr.SetMinute(minute);
+                BasketPtr.SetCount(BasketPtr.GetCount() + 1);
                 break;
             case 2:
                 FootPtr.SetMinute(minute);
+                FootPtr.SetCount(FootPtr.GetCount() + 1);
                 break;
             case 3:
                 TennisPtr.SetMinute(minute);
+                TennisPtr.SetCount(TennisPtr.GetCount() + 1);
                 break;
             case 4:
                 Swimptr.SetMinute(minute);
+                Swimptr.SetCount(Swimptr.GetCount() + 1);
                 break;
             default:
                 cout<<"Geçerli seçim yapınız"<<endl;
@@ -334,13 +338,13 @@ void UserMode(User* usr1,User* usr2,User* usr3)
             cout<<"1. "<<usr1->GetName()<<" "<<usr1->GetSurname()<<
             endl<<"2. "<<usr2->GetName()<<" "<<usr2->GetSurname()<<
             endl<<"3. "<<usr3->GetName()<<" "<<usr3->GetSurname()<<
-            "Secim: ";
+            endl<<"Secim: ";
             cin>>secim;
             if(secim == 1)
             {
                 cout<<"Alınan kalori: "<<usr1->CaloriesTaken()<<
                 endl<<"Yakılan kalori: "<<usr1->CaloriesBurned()<<
-                endl<<"Net"<<usr1->CaloriesTaken()-usr1->CaloriesBurned()<<endl;
+                endl<<"Net: "<<usr1->CaloriesTaken()-usr1->CaloriesBurned()<<endl;
             }
             else if(secim == 2)
             {
@@ -368,9 +372,9 @@ void UserMode(User* usr1,User* usr2,User* usr3)
             if(secim == 1)
                 cout<<endl<<*usr1<<endl;
             else if(secim == 2)
-                cout<<endl<<*usr1<<endl;
+                cout<<endl<<*usr2<<endl;
             else if(secim == 3)
-                cout<<endl<<*usr1<<endl;
+                cout<<endl<<*usr3<<endl;
             else
                 cout<<"Hatalı seçim."<<endl;
         }
@@ -420,6 +424,7 @@ void DevMode(){
             break;
         case 7:
             swimmingTest();
+            break;
         case 8:
             userTest();
             break;
