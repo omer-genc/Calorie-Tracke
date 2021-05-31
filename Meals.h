@@ -69,3 +69,8 @@ class Dinner{
 
 ostream& operator << (ostream&, const Dinner);
 Dinner operator+ (Dinner&,Dinner&);
+
+//tests
+void breakfastTest();
+void lunchTest();
+void dinnerTest();

@@ -76,3 +76,9 @@ class Swimming{
 
 ostream& operator<<(ostream&,const Swimming);
 Swimming operator+(Swimming&,Swimming&);
+
+//test
+void basketballTest();
+void footballTest();
+void tennisTest();
+void swimmingTest();

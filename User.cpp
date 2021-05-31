@@ -220,8 +220,6 @@ int User::CaloriesBurned(){
     return kcal;
 }
 
-
-
 ostream& operator<<(ostream& os,const User user){
     os<<
     "Name: "<<user.Name<<endl<<
@@ -382,6 +380,52 @@ void UserMode(User* usr1,User* usr2,User* usr3)
         else 
             cout<<"Hatalı seçim tekrar deneyiniz"<<endl;
         
+    }
+    
+}
+
+void DevMode(){
+    int secim;
+    while (secim != 10)
+    {
+        cout<<"1. Breakfast class test"<<
+        endl<<"2. Lunch class test "<<
+        endl<<"3. Dinner class test"<<
+        endl<<"4. Basketball class test"<<
+        endl<<"5. Football class test"<<
+        endl<<"6. Tennis class test"<<
+        endl<<"7. Swimming class test"<<
+        endl<<"Seçim: ";
+        cin>>secim;
+
+        switch (secim)
+        {
+        case 1:
+            breakfastTest();
+            break;
+        case 2:
+            lunchTest();
+            break;
+        case 3:
+            dinnerTest();
+            break;
+        case 4:
+            basketballTest();
+            break;
+        case 5:
+            footballTest();
+            break;
+        case 6:
+            tennisTest();
+            break;
+        case 7:
+            swimmingTest();
+            break;
+        
+        default:
+            secim = 10;
+            break;
+        }
     }
     
 }
