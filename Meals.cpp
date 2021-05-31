@@ -224,3 +224,94 @@ void Dinner::Eat(){
     }
     
 }
+
+//tests
+void breakfastTest(){
+    cout<<"Breakfast test"<<endl<<"br1 nesnesi oluşturuldu"<<endl;
+    Breakfast br1;
+    cout<<"br1 yazdırılıyor..."<<endl<<br1<<
+    endl<<"br2 nesnesi constructor ile  oluşturuluyor..... br2(10,10) "<<endl;
+    Breakfast br2(10,10);
+    cout<<"br2 nesnesi yazdırılıyor.....";
+    cout<<br2;
+    cout<<"br3 nesnesi copy constuructor ile oluşturuluyor..... br3(br2)"<<endl;
+    Breakfast br3(br2);
+    cout<<"br3 nesnesi yazdırılıyor...."<<endl;
+    cout<<br3;
+    cout<<"Assigmant operator çalıştırılıyor..... br3 = br1"<<endl;
+    br3 = br1;
+    cout<<"br3 yazdırılıyor....."<<endl;
+    cout<<br3;
+    Breakfast br4(20,20);
+    cout<<"+ operatorü test ediliyor..... br4(20,20), br3 = br4 + br2"<<endl;
+    br3 = br4 + br2;
+    cout<<"br3 yazdırılıyor..."<<endl;
+    cout<<br3;
+    cout<<"br3.setCount(3) br3.setCalori(3) metotları çalıştırılıyor"<<
+    endl<<"br3.getCount(): "<<br3.GetCount()<<
+    endl<<"br3.getCalori(): "<<br3.GetCalori()<<
+    endl<<"br3.Eat() metodu çalıştırılıyor...."<<endl;
+    br3.Eat();
+    cout<<"br3 yazdırılıyor..."<<br3;
+    cout<<endl<<endl;
+}
+
+void lunchTest(){
+    cout<<"Lunch test"<<endl<<"ln1 nesnesi oluşturuldu"<<endl;
+    Lunch ln1;
+    cout<<"ln1 yazdırılıyor..."<<endl<<ln1<<
+    endl<<"ln2 nesnesi constructor ile  oluşturuluyor..... ln2(10,10) "<<endl;
+    Lunch ln2(10,10);
+    cout<<"ln2 nesnesi yazdırılıyor.....";
+    cout<<ln2;
+    cout<<"ln3 nesnesi copy constuructor ile oluşturuluyor..... ln3(ln2)"<<endl;
+    Lunch ln3(ln2);
+    cout<<"ln3 nesnesi yazdırılıyor...."<<endl;
+    cout<<ln3;
+    cout<<"Assigmant operator çalıştırılıyor..... ln3 = ln1"<<endl;
+    ln3 = ln1;
+    cout<<"ln3 yazdırılıyor....."<<endl;
+    cout<<ln3;
+    Lunch ln4(20,20);
+    cout<<"+ operatorü test ediliyor..... ln4(20,20), ln3 = ln4 + ln2"<<endl;
+    ln3 = ln4 + ln2;
+    cout<<"ln3 yazdırılıyor..."<<endl;
+    cout<<ln3;
+    cout<<"ln3.setCount(3) ln3.setCalori(3) metotları çalıştırılıyor"<<
+    endl<<"ln3.getCount(): "<<ln3.GetCount()<<
+    endl<<"ln3.getCalori(): "<<ln3.GetCalori()<<
+    endl<<"ln3.Eat() metodu çalıştırılıyor...."<<endl;
+    ln3.Eat();
+    cout<<"ln3 yazdırılıyor..."<<ln3;
+    cout<<endl<<endl;
+}
+
+void dinnerTest(){
+    cout<<"Dinner test"<<endl<<"dn1 nesnesi oluşturuldu"<<endl;
+    Dinner dn1;
+    cout<<"dn1 yazdırılıyor..."<<endl<<dn1<<
+    endl<<"dn2 nesnesi constructor ile  oluşturuluyor..... dn2(10,10) "<<endl;
+    Dinner dn2(10,10);
+    cout<<"dn2 nesnesi yazdırılıyor.....";
+    cout<<dn2;
+    cout<<"dn3 nesnesi copy constuructor ile oluşturuluyor..... dn3(dn2)"<<endl;
+    Dinner dn3(dn2);
+    cout<<"dn3 nesnesi yazdırılıyor...."<<endl;
+    cout<<dn3;
+    cout<<"Assigmant operator çalıştırılıyor..... dn3 = dn1"<<endl;
+    dn3 = dn1;
+    cout<<"dn3 yazdırılıyor....."<<endl;
+    cout<<dn3;
+    Dinner dn4(20,20);
+    cout<<"+ operatorü test ediliyor..... dn4(20,20), dn3 = dn4 + dn2"<<endl;
+    dn3 = dn4 + dn2;
+    cout<<"dn3 yazdırılıyor..."<<endl;
+    cout<<dn3;
+    cout<<"dn3.setCount(3) dn3.setCalori(3) metotları çalıştırılıyor"<<
+    endl<<"dn3.getCount(): "<<dn3.GetCount()<<
+    endl<<"dn3.getCalori(): "<<dn3.GetCalori()<<
+    endl<<"dn3.Eat() metodu çalıştırılıyor...."<<endl;
+    dn3.Eat();
+    cout<<"dn3 yazdırılıyor..."<<dn3;
+    cout<<endl<<endl;
+}

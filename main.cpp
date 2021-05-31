@@ -31,7 +31,18 @@ int main(){
     User *usr1 = new User;
     User *usr2 = new User;
     User *usr3 = new User;
-
-    UserMode(usr1,usr2,usr3);
+    int secim;
+    cout<<"1. Kullanıcı modu"<<
+    endl<<"2. Geliştirici modu"<<
+    endl<<"Secim: ";
+    cin>>secim;
+    
+    if (secim == 1)
+        UserMode(usr1,usr2,usr3);
+    else if(secim == 2)
+        DevMode();
+    else
+        cout<<"Hatalı seçim";
+    
     return 0;
 }
