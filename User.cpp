@@ -391,6 +391,10 @@ void DevMode(){
         cout<<"1. Breakfast class test"<<
         endl<<"2. Lunch class test "<<
         endl<<"3. Dinner class test"<<
+        endl<<"4. Basketball class test"<<
+        endl<<"5. Football class test"<<
+        endl<<"6. Tennis class test"<<
+        endl<<"7. Swimming class test"<<
         endl<<"Seçim: ";
         cin>>secim;
 
@@ -405,6 +409,19 @@ void DevMode(){
         case 3:
             dinnerTest();
             break;
+        case 4:
+            basketballTest();
+            break;
+        case 5:
+            footballTest();
+            break;
+        case 6:
+            tennisTest();
+            break;
+        case 7:
+            swimmingTest();
+            break;
+        
         default:
             secim = 10;
             break;
