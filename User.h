@@ -46,14 +46,14 @@ class User{
         int WeekOfYear;
         int Day;
 
-        Basketball* BasketPtr;
-        Football*   FootPtr;
-        Tennis*     TennisPtr;
-        Swimming*   Swimptr;
+        Basketball BasketPtr;
+        Football   FootPtr;
+        Tennis     TennisPtr;
+        Swimming   Swimptr;
 
-        Breakfast*  BreakPtr;
-        Lunch*      LunchPtr;
-        Dinner*     DinnerPtr;
+        Breakfast  BreakPtr;
+        Lunch      LunchPtr;
+        Dinner     DinnerPtr;
   
 
 };
