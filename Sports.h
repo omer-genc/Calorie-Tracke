@@ -1,3 +1,5 @@
+#ifndef SPORTS_H_
+#define SPORTS_H_
 #include<iostream>
 using namespace std;
 
@@ -94,3 +96,5 @@ void basketballTest();
 void footballTest();
 void tennisTest();
 void swimmingTest();
+
+#endif

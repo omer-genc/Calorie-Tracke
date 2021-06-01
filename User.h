@@ -1,3 +1,6 @@
+#ifndef USER_H_
+#define USER_H_
+
 #include "Sports.h"
 #include "Meals.h"
 
@@ -66,3 +69,4 @@ void DevMode();
 void userTest();
 
 
+#endif

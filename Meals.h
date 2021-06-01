@@ -1,3 +1,6 @@
+#ifndef MEALS_H_
+#define MEALS_H_
+
 #include<iostream>
 using namespace std;
 
@@ -74,3 +77,5 @@ Dinner operator+ (Dinner&,Dinner&);
 void breakfastTest();
 void lunchTest();
 void dinnerTest();
+
+#endif
